@@ -11,5 +11,22 @@ class Empleado extends Model{
     
     protected $table = 'empleado';
 
+    /*protected $fillable=[
+        'nombre',
+        'slug', 
+        'apellido',
+        'cargo',
+        'telefono'
+        
+    ];*/
 
+    protected $guarded=[
+        'activo'
+    ];
+
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 }

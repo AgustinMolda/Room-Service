@@ -28,13 +28,15 @@ class EmpleadosController extends Controller{
     public function store(Request $request){
         $empleado= new Empleado();
 
-        $empleado->nombre= $request->nombre;
+        Empleado::create($request->all());
+
+        /*$empleado->nombre= $request->nombre;
         $empleado->slug= $request->slug;
         $empleado->apellido=$request->apellido;
         $empleado->cargo= $request->cargo;
         $empleado->telefono=$request->telefono;
 
-        $empleado->save();
+        $empleado->save();*/
 
         return redirect()->route('empleados.index');
 
@@ -49,13 +51,7 @@ class EmpleadosController extends Controller{
 
     public function update(Request $request, Empleado $empleado){
         
-        $empleado->nombre= $request->nombre;
-        $empleado->slug=$request->slug;
-        $empleado->apellido=$request->apellido;
-        $empleado->cargo=$request->cargo;
-        $empleado->telefono=$request->telefono;
-
-        $empleado->save();
+        $empleado->update($request->all());
 
         return redirect()->route('empleados.index');
     }

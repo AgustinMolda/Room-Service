@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Empleado>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Edificio>
  */
-class EmpleadoFactory extends Factory
+class EdificioFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -19,10 +19,9 @@ class EmpleadoFactory extends Factory
         return [
             'nombre'=> $this->faker->name(),
             'slug' => $this->faker->slug(),
-            'apellido'=> $this->faker->name(),
-            'cargo' => $this->faker->text(),
-            'telefono' => $this->faker->name()
-            
+            'direccion' => $this->faker->text(),
+            'pisos'=> $this->faker->numberBetween(10,50),
+            'created_at'=>$this->faker->dateTime()
         ];
     }
 }

@@ -1,8 +1,11 @@
 <?php
 
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\EdificioController;
 use App\Http\Controllers\EmpleadosController;
 use App\Http\Controllers\RoomController;
+use App\Models\Edificio;
+use Database\Factories\EdificioFactory;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -58,3 +61,19 @@ Route::put('/empleados/{empleado}/update',[EmpleadosController::class,'update'])
 Route::delete('/empleados/destroy/{empleado}',[EmpleadosController::class,'destroy'])->name('empleados.destroy');*/
 
 Route::resource('empleados', EmpleadosController::class);
+
+/*Route::get('/edificios',[EdificioController::class,'index'])->name('edificios.index');
+
+Route::get('/edificios/{edificio}',[EdificioController::class, 'show'])->name('edificios.show');
+
+Route::get('/edi/create', [EdificioController::class, 'create'])->name('edificios.create');
+
+Route::post('/edificios/store', [EdificioController::class,'store'])->name('edificios.store');
+
+Route::get('/edificios/edit/{edificio}',[EdificioController::class,'edit'])->name('edificios.edit');
+
+Route::put('/edificios/{edificio}/update',[EdificioController::class,'update'])->name('edificios.update');
+
+Route::delete('/edificios/destroy/{edificio}',[EdificioController::class,'destroy'])->name('edificios.destroy');*/
+
+Route::resource('edificios', EdificioController::class);

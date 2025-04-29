@@ -14,7 +14,7 @@
 
         <ul>
                 @foreach ($empleados as $empleado)
-                        <li><a href="{{route('empleados.show', $empleado->id)}}">{{$empleado->nombre}}</a></li>
+                        <li><a href="{{route('empleados.show', $empleado)}}">{{$empleado->nombre}}</a></li>
                 @endforeach
 
         </ul>
